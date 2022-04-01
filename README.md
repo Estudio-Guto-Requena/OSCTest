@@ -18,3 +18,11 @@ Para usar os scripts instalar a biblioteca **python-osc**:
 
 No sender ao digitar **s seguido de enter** ele interrope o envio dos pacotes para o destino.
 Para retomar o envio pressione **f seguido de enter**
+
+## Uso do restMulti
+
+Para simular varios sensores executar o comando:
+
+**python3 restMulti Numero_de_sensores_desejados**
+
+Para iniciar o comando de start do disparo sincrono dos oculus, pressione f no terminal. E para simular o encerramento pressione s.
