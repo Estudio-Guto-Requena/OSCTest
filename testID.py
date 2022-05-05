@@ -11,7 +11,7 @@ start = False;
 n = 15
 
 rand = []
-devId = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+devId = ['91694b13d904ff07','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
 
 def getkey():
     global start
@@ -37,10 +37,10 @@ class TestHandler(BaseHTTPRequestHandler):
             actives = 0
             for i in range(0, n):
                 if(rand[i] % 2 == 0):
-                    sensorsMock[i] = {'bpm': random.randint(80, 90), 'onFinger': True}
+                    sensorsMock[devId[i]] = {'bpm': random.randint(80, 90), 'onFinger': True}
                     actives+=1
                 else:
-                    sensorsMock[i] = {'bpm': 80, 'onFinger': False}
+                    sensorsMock[devId[i]] = {'bpm': 80, 'onFinger': False}
             outJson['active'] = actives
             outJson['online'] = sensorsMock
 
