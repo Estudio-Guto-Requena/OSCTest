@@ -31,9 +31,15 @@ class TestHandler(BaseHTTPRequestHandler):
             outJson = {}
             sensorsMock = {}
             outJson['start'] = start
+
             for i in range(0, n):
-                sensorsMock[i] = {'bpm': random.randint(80, 90), 'onFinger': True}
+                sensorsMock[i] = {'bpm': random.randint(80, 90), 'ip': "192.168.0.1"+str(i), 'pos': str(i), 'onFinger': True,  'Accessing': True, 'battery': 3.3}
+
+            for i in range(0, 15-n):
+                sensorsMock[15-i] = {'bpm': random.randint(80, 90), 'ip': "192.168.0.2"+str(i), 'pos': str(i), 'onFinger': False,  'Accessing': False, 'battery': -1}
+
             outJson['online'] = sensorsMock
+            outJson['actives'] = n
 
         self.wfile.write(json.dumps(outJson).encode())
 
